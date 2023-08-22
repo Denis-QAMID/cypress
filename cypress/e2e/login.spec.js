@@ -1,4 +1,4 @@
-it("Should successfully login", () => {
+it.only("Should successfully login", () => {
   cy.visit("/");
   cy.login("test@test.com", "test");
   cy.contains("Добро пожаловать test@test.com").should("be.visible");

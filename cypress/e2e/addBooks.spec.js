@@ -50,7 +50,8 @@ describe("Favorite book spec", () => {
   });
 
   //добавлям книгу в избранное из списка имеющихся
-  it("Should add book to favorite through 'Book list' page", () => {
+  it.only("Should add book to favorite through 'Book list' page", () => {
+    cy.contains("Добро пожаловать test@test.com").should("be.visible");
     cy.contains(thirdBook.title)
       .should("be.visible")
       .within(() => cy.get(".card-footer > .btn").click({ force: true }));
